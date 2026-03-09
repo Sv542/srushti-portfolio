@@ -172,13 +172,13 @@ export default function Home() {
             </div>
           </BentoCard>
 
-          {/* Featured Project */}
-          <BentoCard colSpan={2} delay={6} href="https://github.com" id="projects">
+          {/* Featured Project - Chat July */}
+          <BentoCard colSpan={2} delay={6} href="https://github.com/vinyasv/ChatJuly" id="projects">
             <div className="flex flex-col h-full">
               <span className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Latest</span>
-              <h3 className="text-lg font-medium mb-1">Secure Messaging System</h3>
+              <h3 className="text-lg font-medium mb-1">Chat July</h3>
               <p className="text-xs text-muted-foreground flex-1">
-                End-to-end encrypted chat platform with AES/RSA encryption and real-time messaging.
+                Real-time chat application from my GitHub. Built with modern web tech for seamless messaging.
               </p>
               <div className="flex flex-wrap gap-1.5 mt-3">
                 <Badge variant="outline" className="text-[10px]">React</Badge>
@@ -188,8 +188,24 @@ export default function Home() {
             </div>
           </BentoCard>
 
+          {/* Rag-upstash - RAG chat with Upstash Vector */}
+          <BentoCard colSpan={2} delay={7} href="https://github.com/Sv542/rag-upstash" id="projects-rag">
+            <div className="flex flex-col h-full">
+              <span className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Projects</span>
+              <h3 className="text-lg font-medium mb-1">Rag-upstash</h3>
+              <p className="text-xs text-muted-foreground flex-1">
+                RAG chat app using Vercel AI SDK, OpenAI, and Upstash Vector for retrieval-augmented answers.
+              </p>
+              <div className="flex flex-wrap gap-1.5 mt-3">
+                <Badge variant="outline" className="text-[10px]">Next.js</Badge>
+                <Badge variant="outline" className="text-[10px]">OpenAI</Badge>
+                <Badge variant="outline" className="text-[10px]">Upstash</Badge>
+              </div>
+            </div>
+          </BentoCard>
+
           {/* Coffee Counter - Small */}
-          <BentoCard delay={7}>
+          <BentoCard delay={8}>
             <div className="flex flex-col items-center justify-center h-full">
               <Coffee className="w-5 h-5 text-muted-foreground mb-1" />
               <AnimatedCounter value={847} label="coffees" />
@@ -197,7 +213,7 @@ export default function Home() {
           </BentoCard>
 
           {/* Music - Small */}
-          <BentoCard delay={8}>
+          <BentoCard delay={9}>
             <div className="flex flex-col items-center justify-center h-full text-center">
               <Music className="w-5 h-5 text-muted-foreground mb-1" />
               <div className="text-xs font-medium">Playing</div>
@@ -206,7 +222,7 @@ export default function Home() {
           </BentoCard>
 
           {/* Tech Stack */}
-          <BentoCard delay={9}>
+          <BentoCard delay={10}>
             <div className="flex flex-col h-full">
               <span className="text-[10px] text-muted-foreground uppercase tracking-wider mb-3">Stack</span>
               <div className="flex flex-wrap gap-1">
@@ -218,7 +234,7 @@ export default function Home() {
           </BentoCard>
 
           {/* About/Bio Card */}
-          <BentoCard colSpan={2} delay={10} href="https://linkedin.com" id="about">
+          <BentoCard colSpan={2} delay={11} href="https://linkedin.com" id="about">
             <div className="flex items-center gap-4">
               <motion.div
                 className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center font-bold text-lg shrink-0"
@@ -239,27 +255,27 @@ export default function Home() {
           </BentoCard>
 
           {/* Code Explorer */}
-          <BentoCard colSpan={2} rowSpan={2} delay={11}>
+          <BentoCard colSpan={2} rowSpan={2} delay={12}>
             <CodeExplorer />
           </BentoCard>
 
           {/* Camera Roll */}
-          <BentoCard colSpan={2} delay={12}>
+          <BentoCard colSpan={2} delay={13}>
             <CameraRoll />
           </BentoCard>
 
           {/* Reading List */}
-          <BentoCard delay={13}>
+          <BentoCard delay={14}>
             <ReadingList />
           </BentoCard>
 
           {/* Tools I Use */}
-          <BentoCard delay={14}>
+          <BentoCard delay={15}>
             <ToolsIUse />
           </BentoCard>
 
           {/* Footer Note - spans all 4 cols */}
-          <BentoCard colSpan={4} delay={15}>
+          <BentoCard colSpan={4} delay={16}>
             <div className="flex items-center justify-between h-full">
               <span className="text-xs text-muted-foreground">
                 © 2025 Srushti Visweswaraiah. Built with Next.js

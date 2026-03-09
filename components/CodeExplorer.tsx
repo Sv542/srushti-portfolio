@@ -5,6 +5,26 @@ import { ChevronRight, ChevronDown, Folder, File } from "lucide-react";
 
 const fileTree = [
     {
+        name: "ChatJuly",
+        type: "folder",
+        url: "https://github.com/vinyasv/ChatJuly",
+        children: [
+            { name: "client", type: "folder" },
+            { name: "server", type: "folder" },
+            { name: "README.md", type: "file" },
+        ],
+    },
+    {
+        name: "rag-upstash",
+        type: "folder",
+        url: "https://github.com/Sv542/rag-upstash",
+        children: [
+            { name: "app", type: "folder" },
+            { name: "lib", type: "folder" },
+            { name: "README.md", type: "file" },
+        ],
+    },
+    {
         name: "secure-messaging",
         type: "folder",
         url: "https://github.com",
@@ -36,7 +56,7 @@ const fileTree = [
 ];
 
 export function CodeExplorer() {
-    const [expanded, setExpanded] = useState<string[]>(["secure-messaging"]);
+    const [expanded, setExpanded] = useState<string[]>(["ChatJuly"]);
 
     const toggleFolder = (name: string) => {
         setExpanded((prev) =>
