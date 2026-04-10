@@ -59,51 +59,31 @@ const resumeProjects: {
   {
     title: "Personalized Recommendation System",
     paragraphs: [
-      "Built a recommendation engine using collaborative filtering and neural embeddings to model user behavior.",
-      "Improved ranking relevance using cosine similarity and evaluated performance using precision@K.",
-      "Focused on optimizing recommendations for real-world user interaction scenarios.",
+      "Built a recommendation engine using collaborative filtering and neural embeddings to model user behavior at scale.",
+      "Improved ranking relevance using cosine similarity and evaluated performance with precision@K.",
+      "Designed system to simulate real-world recommendation scenarios.",
     ],
     tags: ["Python", "PyTorch", "Embeddings", "Collaborative Filtering"],
     githubUrl: "https://github.com/Sv542",
   },
   {
-    title: "🔹 End-to-End ML Pipeline",
+    title: "NLP Chat Model",
     paragraphs: [
-      "Designed a production-style ML pipeline covering data ingestion, preprocessing, feature engineering, and model training.",
-      "Automated retraining workflows and ensured reproducibility across experiments.",
-      "Structured modular pipeline components to simulate real-world deployment environments.",
-    ],
-    tags: ["Python", "Pandas", "Pipelines", "MLOps"],
-    githubUrl: "https://github.com/Sv542",
-  },
-  {
-    title: "🔹 NLP Chat Intelligence Model",
-    paragraphs: [
-      "Developed a transformer-based NLP model to classify chat sentiment and user intent.",
-      "Applied tokenization, embeddings, and preprocessing techniques for conversational data.",
-      "Improved understanding of user interactions for scalable chat-based systems.",
+      "Developed a transformer-based model to classify sentiment and user intent from chat data.",
+      "Applied tokenization, embeddings, and preprocessing techniques for conversational datasets.",
+      "Improved understanding of user interactions for scalable chat systems.",
     ],
     tags: ["NLP", "Transformers", "PyTorch", "Tokenization"],
     githubUrl: "https://github.com/Sv542",
   },
   {
-    title: "🔹 Trust & Safety ML Model",
+    title: "ML Pipeline",
     paragraphs: [
-      "Built a classification model to detect spam and unsafe behavior using user activity patterns.",
-      "Engineered behavioral features and handled class imbalance for improved model performance.",
-      "Evaluated results using precision-recall metrics for robust detection.",
+      "Designed an end-to-end ML pipeline covering data ingestion, feature engineering, model training, and evaluation.",
+      "Automated retraining workflows and ensured reproducibility across experiments.",
+      "Structured pipeline to reflect production ML system design.",
     ],
-    tags: ["Classification", "Scikit-learn", "Precision-Recall", "Feature Engineering"],
-    githubUrl: "https://github.com/Sv542",
-  },
-  {
-    title: "🔹 Image Captioning System",
-    paragraphs: [
-      "Implemented a deep learning encoder-decoder model combining CNN and LSTM architectures.",
-      "Generated captions from images and evaluated performance using BLEU scores.",
-      "Demonstrated understanding of multimodal learning systems.",
-    ],
-    tags: ["CNN", "LSTM", "Computer Vision", "BLEU"],
+    tags: ["Python", "Pipelines", "MLOps", "Reproducibility"],
     githubUrl: "https://github.com/Sv542",
   },
 ];
@@ -111,9 +91,17 @@ const resumeProjects: {
 const whatIWorkOn = [
   "Recommendation Systems",
   "Natural Language Processing (NLP)",
-  "Machine Learning Pipelines",
+  "ML Pipelines & Automation",
   "Trust & Safety Systems",
-  "Scalable Data Processing",
+  "Large-Scale Data Processing",
+];
+
+const howIBuildML = [
+  "Data preprocessing and feature engineering",
+  "Model development and evaluation",
+  "Experiment tracking and optimization",
+  "Scalable pipeline design",
+  "Deployment-ready ML workflows",
 ];
 
 
@@ -195,19 +183,24 @@ export default function Home() {
             </div>
           </BentoCard>
 
-          {/* Hero - intro + What I Work On */}
+          {/* Hero — headline + What I Work On + How I Build ML Systems */}
           <BentoCard colSpan={3} rowSpan={1} delay={3}>
-            <div className="flex flex-col h-full justify-center gap-6">
+            <div className="flex flex-col h-full justify-center gap-5 md:gap-6">
               <div>
                 <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-snug text-balance">
-                  Machine Learning Engineer focused on building scalable ML systems,
+                  Machine Learning Engineer building scalable recommendation systems,
                   <br />
-                  recommendation engines, and NLP solutions for real-world applications.
+                  NLP models, and end-to-end ML pipelines for real-world applications.
                 </h1>
+                <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
+                  👉 This alone makes recruiters take you seriously.
+                </p>
               </div>
               <Separator className="opacity-40" />
               <div>
-                <h2 className="font-display text-base md:text-lg font-semibold mb-3">What I Work On</h2>
+                <h2 className="font-display text-base md:text-lg font-semibold mb-3">
+                  🔹 What I Work On
+                </h2>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   {whatIWorkOn.map((item) => (
                     <li key={item} className="flex gap-2">
@@ -217,8 +210,22 @@ export default function Home() {
                   ))}
                 </ul>
                 <p className="text-xs text-muted-foreground mt-4 leading-relaxed">
-                  👉 This matches Tinder JD almost word-for-word
+                  👉 This maps EXACTLY to Tinder&apos;s JD.
                 </p>
+              </div>
+              <Separator className="opacity-40" />
+              <div>
+                <h2 className="font-display text-base md:text-lg font-semibold mb-3">
+                  How I Build ML Systems
+                </h2>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  {howIBuildML.map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span className="text-foreground shrink-0">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </BentoCard>
@@ -294,7 +301,7 @@ export default function Home() {
           <BentoCard colSpan={2} delay={6} id="projects">
             <div className="flex flex-col h-full">
               <span className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Latest</span>
-              <h3 className="font-display text-xl md:text-2xl font-bold mb-2">Chat July</h3>
+              <h3 className="font-display text-2xl md:text-3xl font-bold mb-2 tracking-tight">Chat July</h3>
               <p className="text-xs text-muted-foreground flex-1">
                 Real-time chat application from my GitHub. Built with modern web tech for seamless messaging.
               </p>
@@ -307,7 +314,7 @@ export default function Home() {
               <div className="flex flex-wrap gap-2 mt-4 pt-2 border-t border-border/40">
                 <Button variant="outline" size="sm" className="text-xs" asChild>
                   <a href="https://github.com/vinyasv/ChatJuly" target="_blank" rel="noopener noreferrer">
-                    View Project
+                    View Code
                     <ExternalLink className="size-3" />
                   </a>
                 </Button>
@@ -325,7 +332,7 @@ export default function Home() {
           <BentoCard colSpan={2} delay={7} id="projects-rag">
             <div className="flex flex-col h-full">
               <span className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Projects</span>
-              <h3 className="font-display text-xl md:text-2xl font-bold mb-2">Rag-upstash</h3>
+              <h3 className="font-display text-2xl md:text-3xl font-bold mb-2 tracking-tight">Rag-upstash</h3>
               <p className="text-xs text-muted-foreground flex-1">
                 RAG chat app using Vercel AI SDK, OpenAI, and Upstash Vector for retrieval-augmented answers.
               </p>
@@ -338,7 +345,7 @@ export default function Home() {
               <div className="flex flex-wrap gap-2 mt-4 pt-2 border-t border-border/40">
                 <Button variant="outline" size="sm" className="text-xs" asChild>
                   <a href="https://github.com/Sv542/rag-upstash" target="_blank" rel="noopener noreferrer">
-                    View Project
+                    View Code
                     <ExternalLink className="size-3" />
                   </a>
                 </Button>
@@ -352,25 +359,25 @@ export default function Home() {
             </div>
           </BentoCard>
 
-          {/* ML & AI projects — impact + depth */}
+          {/* ML & AI projects — impact, depth, production mindset */}
           <BentoCard colSpan={4} delay={8} id="projects-ml">
             <div className="flex flex-col gap-5">
               <div>
                 <span className="text-xs text-muted-foreground uppercase tracking-wider">ML &amp; AI</span>
                 <h2 className="font-display text-xl md:text-2xl font-bold mt-1">Projects</h2>
                 <p className="text-sm text-muted-foreground mt-2 max-w-3xl leading-relaxed">
-                  Impact-focused work: ranking and recommendations at scale, production-style pipelines, conversational NLP, trust &amp; safety, and multimodal learning.
+                  Impact at scale: recommendation quality, conversational NLP, and pipelines built like production systems—not toy notebooks.
                 </p>
               </div>
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {resumeProjects.map((proj) => (
                   <motion.div
                     key={proj.title}
-                    whileHover={{ y: -4 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    className="rounded-lg border border-border/60 bg-muted/25 p-5 flex flex-col gap-3 shadow-sm hover:shadow-lg hover:border-primary/25 hover:bg-muted/40 transition-all duration-300"
+                    whileHover={{ y: -6, scale: 1.01 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 28 }}
+                    className="rounded-lg border border-border/60 bg-muted/25 p-5 flex flex-col gap-3 shadow-sm hover:shadow-xl hover:border-primary/30 hover:bg-muted/45 transition-all duration-300"
                   >
-                    <h3 className="font-display text-lg md:text-xl font-bold leading-snug text-foreground">
+                    <h3 className="font-display text-xl md:text-2xl font-bold leading-snug text-foreground tracking-tight">
                       {proj.title}
                     </h3>
                     <div className="space-y-2.5 flex-1">
@@ -390,7 +397,7 @@ export default function Home() {
                     <div className="flex flex-wrap gap-2 pt-2 border-t border-border/40">
                       <Button variant="default" size="sm" className="text-xs" asChild>
                         <a href={proj.githubUrl} target="_blank" rel="noopener noreferrer">
-                          View Project
+                          View Code
                           <ExternalLink className="size-3" />
                         </a>
                       </Button>

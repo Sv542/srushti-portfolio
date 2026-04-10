@@ -45,30 +45,13 @@ const fileTree = [
         ],
     },
     {
-        name: "nlp-chat-intelligence",
+        name: "nlp-chat-model",
         type: "folder",
         url: "https://github.com/Sv542",
         children: [
             { name: "tokenizer", type: "folder" },
             { name: "model.py", type: "file" },
-        ],
-    },
-    {
-        name: "trust-safety-classifier",
-        type: "folder",
-        url: "https://github.com/Sv542",
-        children: [
-            { name: "features.py", type: "file" },
-            { name: "train.py", type: "file" },
-        ],
-    },
-    {
-        name: "image-captioning",
-        type: "folder",
-        url: "https://github.com/Sv542",
-        children: [
-            { name: "encoder.py", type: "file" },
-            { name: "decoder.py", type: "file" },
+            { name: "README.md", type: "file" },
         ],
     },
 ];
