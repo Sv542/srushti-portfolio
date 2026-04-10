@@ -17,9 +17,69 @@ import { ReadingList } from "@/components/ReadingList";
 import { ToolsIUse } from "@/components/ToolsIUse";
 
 // Work data
-const workHistory = [
-  { role: "Teaching Assistant", company: "Florida International University", url: "https://www.fiu.edu", period: "Aug 2024—present", current: true },
-  { role: "Associate Software Developer", company: "Aptean India", url: "https://www.aptean.com", period: "Mar 2023—July 2024" },
+const workHistory: {
+  role: string;
+  company: string;
+  url?: string;
+  period: string;
+  current?: boolean;
+  highlights?: string[];
+}[] = [
+  {
+    role: "Teaching Assistant",
+    company: "Florida International University",
+    url: "https://www.fiu.edu",
+    period: "Aug 2024—present",
+    current: true,
+    highlights: [
+      "Mentored 100+ students in Machine Learning, Python, and Algorithms.",
+      "Guided students through the full ML lifecycle: preprocessing, training, evaluation, and hyperparameter tuning.",
+    ],
+  },
+  {
+    role: "Associate Software Developer",
+    company: "Aptean India",
+    url: "https://www.aptean.com",
+    period: "Mar 2023—July 2024",
+    highlights: [
+      "Built scalable backend services and data pipelines; improved processing efficiency by ~30%.",
+      "Designed automated validation and transformation workflows with Python and SQL.",
+      "Optimized API performance and reduced latency through efficient queries and data structuring.",
+    ],
+  },
+];
+
+const resumeProjects = [
+  {
+    title: "Personalized Recommendation System",
+    description:
+      "Collaborative filtering and neural embeddings for user preferences. Cosine similarity, precision@K, and feature tuning for ranking relevance.",
+    tags: ["PyTorch", "Python", "Embeddings"],
+  },
+  {
+    title: "End-to-End ML Pipeline",
+    description:
+      "Production-style pipeline: ingestion, preprocessing, feature engineering, and training. Modular design for reproducibility and automated retraining.",
+    tags: ["Python", "Pipelines", "MLOps"],
+  },
+  {
+    title: "NLP Chat Intelligence Model",
+    description:
+      "Transformer-based sentiment and intent classification on conversational data. Tokenization, embeddings, and strong benchmark accuracy.",
+    tags: ["NLP", "Transformers", "PyTorch"],
+  },
+  {
+    title: "Trust & Safety Classification",
+    description:
+      "Spam and unsafe-behavior detection from behavioral features. Class balancing, feature engineering, and precision–recall evaluation.",
+    tags: ["Classification", "Scikit-learn", "Evaluation"],
+  },
+  {
+    title: "Image Captioning System",
+    description:
+      "CNN–LSTM encoder–decoder for image caption generation. BLEU evaluation and hyperparameter tuning.",
+    tags: ["CNN", "LSTM", "Computer Vision"],
+  },
 ];
 
 
@@ -66,7 +126,7 @@ export default function Home() {
               Srushti Visweswaraiah
             </Link>
             <div className="flex items-center gap-4">
-              <a href="https://github.com" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="https://github.com/Sv542" className="text-muted-foreground hover:text-foreground transition-colors">
                 <Github className="w-4 h-4" />
               </a>
               <a href="https://linkedin.com" className="text-muted-foreground hover:text-foreground transition-colors">
@@ -82,7 +142,7 @@ export default function Home() {
           <BentoCard delay={1}>
             <div className="flex flex-col items-center justify-center h-full text-center">
               <MapPin className="w-5 h-5 text-muted-foreground mb-2" />
-              <div className="font-medium">United States</div>
+              <div className="font-medium">Miami, FL</div>
               <span className="text-xs text-muted-foreground">EST</span>
             </div>
           </BentoCard>
@@ -107,7 +167,7 @@ export default function Home() {
               </h1>
               <p className="text-sm text-muted-foreground max-w-xl">
                 Master's student in Computer Science at FIU with experience in full-stack development and AI/ML.
-                Currently teaching AI and Operating Systems while building secure, intelligent applications.
+                Based in Miami. Teaching assistant for ML and algorithms; building ML systems from data pipelines to model deployment.
               </p>
             </div>
           </BentoCard>
@@ -162,6 +222,13 @@ export default function Home() {
                         ) : (
                           <p className="text-xs text-muted-foreground">{work.company}</p>
                         )}
+                        {work.highlights && (
+                          <ul className="mt-2 space-y-1.5 text-[11px] text-muted-foreground list-disc pl-4">
+                            {work.highlights.map((line, j) => (
+                              <li key={j}>{line}</li>
+                            ))}
+                          </ul>
+                        )}
                       </div>
                       <span className="text-[10px] text-muted-foreground whitespace-nowrap">{work.period}</span>
                     </div>
@@ -204,8 +271,39 @@ export default function Home() {
             </div>
           </BentoCard>
 
+          {/* Resume: ML & AI projects */}
+          <BentoCard colSpan={4} delay={8} id="projects-ml">
+            <div className="flex flex-col gap-4">
+              <div>
+                <span className="text-xs text-muted-foreground uppercase tracking-wider">ML &amp; AI</span>
+                <h2 className="font-display text-lg font-semibold mt-1">Projects from my resume</h2>
+                <p className="text-xs text-muted-foreground mt-1 max-w-2xl">
+                  Coursework and independent ML work: recommendation, pipelines, NLP, safety classification, and vision.
+                </p>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {resumeProjects.map((proj) => (
+                  <div
+                    key={proj.title}
+                    className="rounded-md border border-border/50 bg-muted/30 p-4 flex flex-col gap-2"
+                  >
+                    <h3 className="text-sm font-medium leading-snug">{proj.title}</h3>
+                    <p className="text-xs text-muted-foreground flex-1">{proj.description}</p>
+                    <div className="flex flex-wrap gap-1.5 pt-1">
+                      {proj.tags.map((tag) => (
+                        <Badge key={tag} variant="outline" className="text-[10px]">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </BentoCard>
+
           {/* Coffee Counter - Small */}
-          <BentoCard delay={8}>
+          <BentoCard delay={9}>
             <div className="flex flex-col items-center justify-center h-full">
               <Coffee className="w-5 h-5 text-muted-foreground mb-1" />
               <AnimatedCounter value={847} label="coffees" />
@@ -213,7 +311,7 @@ export default function Home() {
           </BentoCard>
 
           {/* Music - Small */}
-          <BentoCard delay={9}>
+          <BentoCard delay={10}>
             <div className="flex flex-col items-center justify-center h-full text-center">
               <Music className="w-5 h-5 text-muted-foreground mb-1" />
               <div className="text-xs font-medium">Playing</div>
@@ -222,11 +320,11 @@ export default function Home() {
           </BentoCard>
 
           {/* Tech Stack */}
-          <BentoCard delay={10}>
+          <BentoCard delay={11}>
             <div className="flex flex-col h-full">
               <span className="text-[10px] text-muted-foreground uppercase tracking-wider mb-3">Stack</span>
               <div className="flex flex-wrap gap-1">
-                {["Python", "React", "Node.js", "C++"].map((tech) => (
+                {["Python", "PyTorch", "TensorFlow", "SQL", "JavaScript", "React"].map((tech) => (
                   <Badge key={tech} variant="outline" className="text-[10px] px-1.5">{tech}</Badge>
                 ))}
               </div>
@@ -234,7 +332,7 @@ export default function Home() {
           </BentoCard>
 
           {/* About/Bio Card */}
-          <BentoCard colSpan={2} delay={11} href="https://linkedin.com" id="about">
+          <BentoCard colSpan={2} delay={12} href="https://linkedin.com" id="about">
             <div className="flex items-center gap-4">
               <motion.div
                 className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center font-bold text-lg shrink-0"
@@ -246,42 +344,42 @@ export default function Home() {
                 <div className="flex items-center gap-2 mb-0.5">
                   <h3 className="font-medium text-sm">Srushti Visweswaraiah</h3>
                 </div>
-                <p className="text-xs text-muted-foreground line-clamp-2">
-                  MS in Computer Science student at FIU specializing in AI & Software Development.
-                  Teaching Assistant helping 100+ students with AI and Operating Systems.
+                <p className="text-xs text-muted-foreground line-clamp-3">
+                  MS in Computer Science (AI/ML) at FIU · BE in CS from Siddaganga Institute of Technology.
+                  Teaching Assistant for ML and algorithms; ex–Aptean backend &amp; data pipelines.
                 </p>
               </div>
             </div>
           </BentoCard>
 
           {/* Code Explorer */}
-          <BentoCard colSpan={2} rowSpan={2} delay={12}>
+          <BentoCard colSpan={2} rowSpan={2} delay={13}>
             <CodeExplorer />
           </BentoCard>
 
           {/* Camera Roll */}
-          <BentoCard colSpan={2} delay={13}>
+          <BentoCard colSpan={2} delay={14}>
             <CameraRoll />
           </BentoCard>
 
           {/* Reading List */}
-          <BentoCard delay={14}>
+          <BentoCard delay={15}>
             <ReadingList />
           </BentoCard>
 
           {/* Tools I Use */}
-          <BentoCard delay={15}>
+          <BentoCard delay={16}>
             <ToolsIUse />
           </BentoCard>
 
           {/* Footer Note - spans all 4 cols */}
-          <BentoCard colSpan={4} delay={16}>
+          <BentoCard colSpan={4} delay={17}>
             <div className="flex items-center justify-between h-full">
               <span className="text-xs text-muted-foreground">
-                © 2025 Srushti Visweswaraiah. Built with Next.js
+                © 2026 Srushti Visweswaraiah. Built with Next.js
               </span>
               <span className="text-xs text-muted-foreground">
-                Last updated: Dec 2025
+                Miami, FL · svisw003@fiu.edu
               </span>
             </div>
           </BentoCard>

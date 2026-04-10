@@ -25,32 +25,50 @@ const fileTree = [
         ],
     },
     {
-        name: "secure-messaging",
+        name: "recommendation-system",
         type: "folder",
-        url: "https://github.com",
+        url: "https://github.com/Sv542",
         children: [
-            { name: "client", type: "folder" },
-            { name: "server", type: "folder" },
-            { name: "README.md", type: "file" },
+            { name: "models", type: "folder" },
+            { name: "embeddings.py", type: "file" },
+            { name: "evaluate.py", type: "file" },
         ],
     },
     {
-        name: "medical-report-ai",
+        name: "ml-pipeline",
         type: "folder",
-        url: "https://github.com",
+        url: "https://github.com/Sv542",
         children: [
-            { name: "models", type: "folder" },
-            { name: "data", type: "folder" },
+            { name: "ingest", type: "folder" },
+            { name: "train.py", type: "file" },
+            { name: "config.yaml", type: "file" },
+        ],
+    },
+    {
+        name: "nlp-chat-intelligence",
+        type: "folder",
+        url: "https://github.com/Sv542",
+        children: [
+            { name: "tokenizer", type: "folder" },
+            { name: "model.py", type: "file" },
+        ],
+    },
+    {
+        name: "trust-safety-classifier",
+        type: "folder",
+        url: "https://github.com/Sv542",
+        children: [
+            { name: "features.py", type: "file" },
             { name: "train.py", type: "file" },
         ],
     },
     {
-        name: "social-distancing",
+        name: "image-captioning",
         type: "folder",
-        url: "https://github.com",
+        url: "https://github.com/Sv542",
         children: [
-            { name: "yolo", type: "folder" },
-            { name: "detector.py", type: "file" },
+            { name: "encoder.py", type: "file" },
+            { name: "decoder.py", type: "file" },
         ],
     },
 ];
