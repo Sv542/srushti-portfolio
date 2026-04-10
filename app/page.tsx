@@ -192,14 +192,12 @@ export default function Home() {
                   <br />
                   NLP models, and end-to-end ML pipelines for real-world applications.
                 </h1>
-                <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
-                  👉 This alone makes recruiters take you seriously.
-                </p>
+                
               </div>
               <Separator className="opacity-40" />
               <div>
                 <h2 className="font-display text-base md:text-lg font-semibold mb-3">
-                  🔹 What I Work On
+                   What I Work On
                 </h2>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   {whatIWorkOn.map((item) => (
@@ -209,9 +207,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <p className="text-xs text-muted-foreground mt-4 leading-relaxed">
-                  👉 This maps EXACTLY to Tinder&apos;s JD.
-                </p>
+                
               </div>
               <Separator className="opacity-40" />
               <div>
