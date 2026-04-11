@@ -224,12 +224,9 @@ export default function Home() {
                 <h2 className="font-display text-base md:text-lg font-semibold mb-3">
                   What I Work On
                 </h2>
-                <ul className="space-y-2 text-sm text-muted-foreground">
+                <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
                   {whatIWorkOn.map((item) => (
-                    <li key={item} className="flex gap-2">
-                      <span className="text-foreground shrink-0">•</span>
-                      <span>{item}</span>
-                    </li>
+                    <li key={item} className="pl-0.5">{item}</li>
                   ))}
                 </ul>
               </div>
@@ -238,12 +235,9 @@ export default function Home() {
                 <h2 className="font-display text-base md:text-lg font-semibold mb-3">
                   How I Build ML Systems
                 </h2>
-                <ul className="space-y-2 text-sm text-muted-foreground">
+                <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
                   {howIBuildML.map((item) => (
-                    <li key={item} className="flex gap-2">
-                      <span className="text-foreground shrink-0">•</span>
-                      <span>{item}</span>
-                    </li>
+                    <li key={item} className="pl-0.5">{item}</li>
                   ))}
                 </ul>
               </div>

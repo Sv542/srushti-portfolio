@@ -102,7 +102,7 @@ export function CodeExplorer() {
                                     <ChevronRight className="w-3 h-3" />
                                 )}
                             </button>
-                            <Folder className="w-3 h-3 text-blue-500" />
+                            <Folder className="w-3 h-3 text-muted-foreground" />
                             <a
                                 href={item.url}
                                 target="_blank"
@@ -117,7 +117,7 @@ export function CodeExplorer() {
                                 {item.children.map((child) => (
                                     <div key={child.name} className="flex items-center gap-1.5">
                                         {child.type === "folder" ? (
-                                            <Folder className="w-3 h-3 text-blue-400" />
+                                            <Folder className="w-3 h-3 text-muted-foreground/80" />
                                         ) : (
                                             <File className="w-3 h-3 text-muted-foreground" />
                                         )}
