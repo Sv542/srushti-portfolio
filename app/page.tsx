@@ -222,7 +222,7 @@ export default function Home() {
               <Separator className="opacity-40" />
               <div>
                 <h2 className="font-display text-base md:text-lg font-semibold mb-3">
-                  🔹 What I Work On
+                  What I Work On
                 </h2>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   {whatIWorkOn.map((item) => (
