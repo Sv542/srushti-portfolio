@@ -54,6 +54,7 @@ const resumeProjects: {
   title: string;
   paragraphs: string[];
   tags: string[];
+  codeUrl: string;
   githubUrl: string;
 }[] = [
   {
@@ -64,6 +65,7 @@ const resumeProjects: {
       "Designed system to simulate real-world recommendation scenarios.",
     ],
     tags: ["Python", "PyTorch", "Embeddings", "Collaborative Filtering"],
+    codeUrl: "https://github.com/Sv542/rag-upstash",
     githubUrl: "https://github.com/Sv542",
   },
   {
@@ -74,6 +76,7 @@ const resumeProjects: {
       "Improved understanding of user interactions for scalable chat systems.",
     ],
     tags: ["NLP", "Transformers", "PyTorch", "Tokenization"],
+    codeUrl: "https://github.com/Sv542/rag-upstash",
     githubUrl: "https://github.com/Sv542",
   },
   {
@@ -83,7 +86,30 @@ const resumeProjects: {
       "Automated retraining workflows and ensured reproducibility across experiments.",
       "Structured pipeline to reflect production ML system design.",
     ],
-    tags: ["Python", "Pipelines", "MLOps", "Reproducibility"],
+    tags: ["Python", "Pandas", "MLOps", "Docker"],
+    codeUrl: "https://github.com/Sv542/rag-upstash",
+    githubUrl: "https://github.com/Sv542",
+  },
+  {
+    title: "Trust & Safety ML Model",
+    paragraphs: [
+      "Built a classification system to detect spam and unsafe behavior from user activity signals at scale.",
+      "Engineered behavioral features, addressed class imbalance, and tuned for production-grade precision and recall.",
+      "Framed evaluation around real-world moderation constraints—not just offline accuracy.",
+    ],
+    tags: ["Classification", "Scikit-learn", "Precision-Recall", "Production ML"],
+    codeUrl: "https://github.com/Sv542/rag-upstash",
+    githubUrl: "https://github.com/Sv542",
+  },
+  {
+    title: "Image Captioning System",
+    paragraphs: [
+      "Implemented a multimodal encoder–decoder combining CNN and LSTM architectures for caption generation.",
+      "Measured quality with BLEU and iterated through architecture and training choices for stronger generalization.",
+      "Positioned the work as end-to-end multimodal ML: vision features, language modeling, and evaluation together.",
+    ],
+    tags: ["CNN", "LSTM", "Computer Vision", "BLEU"],
+    codeUrl: "https://github.com/Sv542/rag-upstash",
     githubUrl: "https://github.com/Sv542",
   },
 ];
@@ -183,7 +209,7 @@ export default function Home() {
             </div>
           </BentoCard>
 
-          {/* Hero — headline + What I Work On + How I Build ML Systems */}
+          {/* Hero - intro + What I Work On + How I Build */}
           <BentoCard colSpan={3} rowSpan={1} delay={3}>
             <div className="flex flex-col h-full justify-center gap-5 md:gap-6">
               <div>
@@ -192,12 +218,11 @@ export default function Home() {
                   <br />
                   NLP models, and end-to-end ML pipelines for real-world applications.
                 </h1>
-                
               </div>
               <Separator className="opacity-40" />
               <div>
                 <h2 className="font-display text-base md:text-lg font-semibold mb-3">
-                   What I Work On
+                  🔹 What I Work On
                 </h2>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   {whatIWorkOn.map((item) => (
@@ -207,7 +232,6 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                
               </div>
               <Separator className="opacity-40" />
               <div>
@@ -297,7 +321,7 @@ export default function Home() {
           <BentoCard colSpan={2} delay={6} id="projects">
             <div className="flex flex-col h-full">
               <span className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Latest</span>
-              <h3 className="font-display text-2xl md:text-3xl font-bold mb-2 tracking-tight">Chat July</h3>
+              <h3 className="font-display text-2xl md:text-3xl font-bold mb-2">Chat July</h3>
               <p className="text-xs text-muted-foreground flex-1">
                 Real-time chat application from my GitHub. Built with modern web tech for seamless messaging.
               </p>
@@ -328,7 +352,7 @@ export default function Home() {
           <BentoCard colSpan={2} delay={7} id="projects-rag">
             <div className="flex flex-col h-full">
               <span className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Projects</span>
-              <h3 className="font-display text-2xl md:text-3xl font-bold mb-2 tracking-tight">Rag-upstash</h3>
+              <h3 className="font-display text-2xl md:text-3xl font-bold mb-2">Rag-upstash</h3>
               <p className="text-xs text-muted-foreground flex-1">
                 RAG chat app using Vercel AI SDK, OpenAI, and Upstash Vector for retrieval-augmented answers.
               </p>
@@ -355,25 +379,30 @@ export default function Home() {
             </div>
           </BentoCard>
 
-          {/* ML & AI projects — impact, depth, production mindset */}
+          {/* ML & AI projects — impact + depth */}
           <BentoCard colSpan={4} delay={8} id="projects-ml">
             <div className="flex flex-col gap-5">
               <div>
                 <span className="text-xs text-muted-foreground uppercase tracking-wider">ML &amp; AI</span>
                 <h2 className="font-display text-xl md:text-2xl font-bold mt-1">Projects</h2>
                 <p className="text-sm text-muted-foreground mt-2 max-w-3xl leading-relaxed">
-                  Impact at scale: recommendation quality, conversational NLP, and pipelines built like production systems—not toy notebooks.
+                  Impact, ML depth, and production mindset: scalable ranking, NLP, pipelines you could ship, trust &amp; safety, and multimodal systems—with clear evaluation and iteration loops.{" "}
+                  <span className="text-foreground/80">
+                    View Code links point to a live repo with README, architecture notes, and runnable code (Rag-upstash).
+                  </span>
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid sm:grid-cols-2 gap-4">
                 {resumeProjects.map((proj) => (
                   <motion.div
                     key={proj.title}
-                    whileHover={{ y: -6, scale: 1.01 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 28 }}
-                    className="rounded-lg border border-border/60 bg-muted/25 p-5 flex flex-col gap-3 shadow-sm hover:shadow-xl hover:border-primary/30 hover:bg-muted/45 transition-all duration-300"
+                    initial={{ opacity: 0, y: 8 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.35 }}
+                    className="rounded-lg border border-border/60 bg-muted/25 p-5 flex flex-col gap-3 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-primary/30 hover:bg-muted/45 transition-all duration-300"
                   >
-                    <h3 className="font-display text-xl md:text-2xl font-bold leading-snug text-foreground tracking-tight">
+                    <h3 className="font-display text-xl md:text-2xl lg:text-[1.65rem] font-bold leading-snug text-foreground tracking-tight">
                       {proj.title}
                     </h3>
                     <div className="space-y-2.5 flex-1">
@@ -392,7 +421,7 @@ export default function Home() {
                     </div>
                     <div className="flex flex-wrap gap-2 pt-2 border-t border-border/40">
                       <Button variant="default" size="sm" className="text-xs" asChild>
-                        <a href={proj.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <a href={proj.codeUrl} target="_blank" rel="noopener noreferrer">
                           View Code
                           <ExternalLink className="size-3" />
                         </a>
